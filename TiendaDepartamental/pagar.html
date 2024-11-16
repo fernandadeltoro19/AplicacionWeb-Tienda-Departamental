@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagar Crédito</title>
+    <link rel="stylesheet" href="stylepagar.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Botón Volver -->
+        <button class="btn-volver" onclick="goBack()">
+            <img src="https://cdn.icon-icons.com/icons2/1674/PNG/512/arrowback_111142.png" alt="Volver">
+        </button>
+
+        <div class="content">
+            <!-- Imagen de la licuadora -->
+            <div class="product">
+                <img src="https://www.soriana.com/dw/image/v2/BGBD_PRD/on/demandware.static/-/Sites-soriana-grocery-master-catalog/default/dw984cdef0/images/product/53891140430_A.jpg?sw=445&sh=445&sm=fit" alt="Licuadora" class="product-image">
+                <div class="product-info">
+                    <h2>Licuadora 500W</h2>
+                    <p>Licuadora de 500W con 3 velocidades y función de pulso.</p>
+                    <p class="price">Monto Pendiente: $500.00</p>
+                </div>
+            </div>
+
+            <!-- Monto a Pagar -->
+            <div class="payment-section">
+                <label for="montoPago">Monto: 500</label>
+                <input type="number" id="montoPago" placeholder="Ingresa el monto a pagar" class="input-monto">
+                <button class="btn-pagar" onclick="processPayment()">Pagar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para volver a la página anterior
+        function goBack() {
+            window.location.href = "datosclientes.html"; // Cambia por la URL de tu formulario de pago
+
+        }
+
+        // Función para procesar el pago
+        function processPayment() {
+            const montoPago = document.getElementById('montoPago').value;
+            const montoPendiente = 500;
+
+            if (montoPago == montoPendiente) {
+                alert("Pago realizado con éxito.");
+            } else if (montoPago < montoPendiente) {
+                alert("El monto ingresado es menor al monto pendiente.");
+            } else if (montoPago > montoPendiente) {
+                alert("El monto ingresado excede el monto pendiente.");
+            } else {
+                alert("Por favor, ingrese un monto válido.");
+            }
+        }
+    </script>
+</body>
+</html>

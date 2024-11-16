@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario - Tienda Departamental</title>
+    <link rel="stylesheet" href="styleregistrousuario.css">
+</head>
+<body>
+    <div class="registro-container">
+        
+        <!-- Botón Volver con flecha -->
+        <button class="btn-volver" onclick="window.history.back()">
+            <img src="https://cdn.icon-icons.com/icons2/1674/PNG/512/arrowback_111142.png" alt="Volver" class="flecha-img"> Volver
+        </button>
+        <!-- Encabezado del formulario -->
+        <h1>Registro de Usuario</h1>
+
+        <!-- Campo de Nombre Completo -->
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <!-- Campo de Correo Electrónico -->
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <!-- Campo de Contraseña -->
+        <label for="contraseña">Contraseña</label>
+        <input type="password" id="contraseña" name="contraseña" required>
+
+        <!-- Botón para adjuntar Comprobante de Domicilio (PDF) -->
+        <label>Comprobante de Domicilio (PDF)</label>
+        <input type="file" id="comprobante" accept=".pdf">
+        <p id="comprobante-info"></p>
+
+        <!-- Botón para adjuntar Fotografía del INE (PNG) -->
+        <label>Fotografía del INE (PNG)</label>
+        <input type="file" id="ine" accept=".png">
+        <p id="ine-info"></p>
+
+        <!-- Botón de Registro -->
+        <button id="btnRegistrar" onclick="registrarCuenta()">Registrar Cuenta</button>
+    </div>
+
+    <!-- JavaScript para manejo de archivos y validación -->
+    <script>
+        function registrarCuenta() {
+            const nombre = document.getElementById("nombre").value;
+            const correo = document.getElementById("correo").value;
+            const contraseña = document.getElementById("contraseña").value;
+            const comprobante = document.getElementById("comprobante").files.length > 0;
+            const ine = document.getElementById("ine").files.length > 0;
+
+            // Validación de campos vacíos
+            if (!nombre || !correo || !contraseña || !comprobante || !ine) {
+                alert("Por favor, completa todos los campos y selecciona los archivos requeridos.");
+            } else {
+                alert("Registro exitoso. Tu cuenta ha sido creada.");
+                // Redireccionar o mostrar el inicio después del registro
+                window.location.href = "inicio.html"; // Cambia "inicio.html" por el nombre de tu página de inicio
+            }
+        }
+
+        // Mostrar nombre de archivo seleccionado
+        document.getElementById("comprobante").addEventListener("change", function() {
+            const archivo = this.files[0];
+            document.getElementById("comprobante-info").textContent = archivo ? `Archivo seleccionado: ${archivo.name}` : '';
+        });
+
+        document.getElementById("ine").addEventListener("change", function() {
+            const archivo = this.files[0];
+            document.getElementById("ine-info").textContent = archivo ? `Archivo seleccionado: ${archivo.name}` : '';
+        });
+    </script>
+</body>
+</html>

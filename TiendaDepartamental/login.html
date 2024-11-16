@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="stylelogin.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - Tienda Departamental</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Inicio De Sesión</h1>
+
+        <!-- Label de correo -->
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" placeholder="Ingresa tu usuario">
+
+        <!-- Label de contraseña -->
+        <label for="contraseña">Contraseña</label>
+        <input type="password" id="contraseña" placeholder="Ingresa tu contraseña">
+
+        <!-- Mensaje de error -->
+        <div id="error-message" class="error-message">Por favor, completa todos los campos.</div>
+
+        <!-- Botón de iniciar sesión -->
+        <button class="login-button" onclick="iniciarSesion()">Iniciar Sesión</button>
+
+        <!-- Link para registrarse -->
+        <a href="registrousaurio.html" class="register-link">¿No tienes cuenta? Regístrate aquí</a>
+    </div>
+
+    <script>
+        function iniciarSesion() {
+            const usuario = document.getElementById('usuario').value;
+            const contraseña = document.getElementById('contraseña').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (!usuario || !contraseña) {
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+                alert(`Bienvenido, ${usuario}`);
+                window.location.href = "datosclientes.html";
+            }
+        }
+    </script>
+</body>
+</html>

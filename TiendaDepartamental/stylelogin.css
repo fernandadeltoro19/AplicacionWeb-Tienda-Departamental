@@ -1,0 +1,72 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+h1 {
+    color: #003399; /* Azul Coppel */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+label {
+    font-size: 14px;
+    color: black;
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+    margin-top: 10px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #FFD100; /* Amarillo Coppel */
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.register-link {
+    color: #003399;
+    margin-top: 15px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}

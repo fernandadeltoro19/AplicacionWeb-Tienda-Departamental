@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Aumento de Crédito</title>
+    <link rel="stylesheet" href="stylesolicitarcredito.css">
+</head>
+<body>
+    <!-- Botón Volver -->
+    <button class="back-button" onclick="goBack()">
+        <img src="https://cdn.icon-icons.com/icons2/1674/PNG/512/arrowback_111142.png" alt="Volver">
+    </button>
+
+    <div class="form-container">
+        <h1>Solicitud de Aumento de Crédito</h1>
+
+        <!-- Nombre -->
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre completo">
+
+        <!-- Monto Solicitado -->
+        <label for="monto">Monto Solicitado</label>
+        <input type="text" id="monto" name="monto" placeholder="Ingrese el monto solicitado">
+
+        <!-- Motivo del Aumento -->
+        <label for="motivo">Motivo del Aumento</label>
+        <textarea id="motivo" name="motivo" placeholder="Ingrese el motivo del aumento"></textarea>
+
+        <!-- Términos y condiciones -->
+        <div class="checkbox-container">
+            <input type="checkbox" id="terminos" name="terminos">
+            <label for="terminos">Acepto los términos y condiciones</label>
+        </div>
+
+        <!-- Subir Estado de Cuenta -->
+        <label for="estado-cuenta">Subir Estado de Cuenta (PDF)</label>
+        <button type="button" id="subir-estado">Seleccionar Archivo</button>
+
+        <!-- Botón Enviar Solicitud -->
+        <button type="submit" id="enviar-solicitud">Enviar Solicitud</button>
+    </div>
+
+    <script>
+        // Event listener para el botón "Volver"
+        function goBack() {
+            window.location.href = "datosclientes.html"; // Cambia por la URL de tu formulario de pago
+        }
+
+        // Event listener para el botón "Seleccionar Archivo"
+        document.getElementById("subir-estado").addEventListener("click", function() {
+            alert("Selecciona un archivo PDF");
+        });
+
+        // Event listener para el botón "Enviar Solicitud"
+        document.getElementById("enviar-solicitud").addEventListener("click", function() {
+            var nombre = document.getElementById("nombre").value;
+            var monto = document.getElementById("monto").value;
+            var motivo = document.getElementById("motivo").value;
+            var terminos = document.getElementById("terminos").checked;
+
+            if (nombre == "" || monto == "" || motivo == "") {
+                alert("Por favor, complete todos los campos antes de enviar la solicitud.");
+            } else if (!terminos) {
+                alert("Debe aceptar los términos y condiciones para continuar.");
+            } else {
+                alert("Solicitud enviada con éxito.");
+            }
+        });
+    </script>
+</body>
+</html>

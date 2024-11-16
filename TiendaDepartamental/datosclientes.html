@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Cliente - Crédito y Compras</title>
+    <link rel="stylesheet" href="styledatoscliente.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="btn-volver" onclick="window.location.href='login.html'">&#8592;</button>
+            <h1>Estado de Cuenta del Cliente</h1>
+            <button class="btn-ver-productos" onclick="window.location.href='productosdisponibles.html'">&#128722;</button>
+        </div>
+
+        <div class="welcome">
+            <p>Bienvenido (a)</p>
+        </div>
+
+        <div class="saldo-restante">
+            <p>Saldo Restante a Pagar: $500.00</p>
+        </div>
+
+        <div class="fecha-corte">
+            <p>Fecha de Corte: 10/11/2024</p>
+        </div>
+
+        <div class="info-panel">
+            <p><strong>Crédito Inicial:</strong> $3000.00</p>
+            <p><strong>Crédito Disponible:</strong> $2500.00</p>
+            <p><strong>Próximo Pago:</strong> $500.00 - Fecha: 15/12/2024</p>
+        </div>
+
+        <div class="historial-compras">
+            <h2>Historial de Compras</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Descripción</th>
+                        <th>Monto</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>05/11/2024</td>
+                        <td>Celular</td>
+                        <td>$1000.00</td>
+                        <td>Pagado</td>
+                    </tr>
+                    <tr>
+                        <td>10/11/2024</td>
+                        <td>Lavadora</td>
+                        <td>$500.00</td>
+                        <td>Pagado</td>
+                    </tr>
+                    <tr>
+                        <td>12/11/2024</td>
+                        <td>Licuadora</td>
+                        <td>$500.00</td>
+                        <td>Pendiente</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="buttons">
+            <button class="btn-pagar" onclick="redirigirPagar()">Pagar Ahora</button>
+            <button class="btn-solicitar-credito" onclick="redirigirCredito()">Solicitar Crédito</button>
+        </div>
+        
+    </div>
+</body>
+<script>
+
+    // Redirige a la página de pago
+function redirigirPagar() {
+    window.location.href = "pagar.html"; // Cambia por la URL de tu formulario de pago
+}
+
+// Redirige a la página de solicitud de crédito
+function redirigirCredito() {
+    window.location.href = "solicitarcredito.html"; // Cambia por la URL de tu formulario de crédito
+}
+
+</script>
+</html>

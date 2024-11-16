@@ -1,0 +1,138 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+}
+
+/* Contenedor del formulario de registro */
+.registro-container {
+    background-color: #ffffff;
+    width: 400px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.registro-container h1 {
+    font-size: 24px;
+    color: #003399; /* Azul Coppel */
+    margin-bottom: 20px;
+}
+
+/* Estilos para etiquetas y campos de entrada */
+label {
+    display: block;
+    font-size: 14px;
+    color: #333333;
+    margin-top: 15px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333333;
+}
+
+/* Estilos específicos para los mensajes de archivo seleccionado */
+#comprobante-info,
+#ine-info {
+    font-size: 12px;
+    color: #666666;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Estilos para el botón de registro */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #003399; /* Azul Coppel */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #002080; /* Un azul ligeramente más oscuro */
+}
+
+/* Estilo para botones de archivo */
+input[type="file"] {
+    padding: 5px;
+    cursor: pointer;
+    background-color: #ffd100; /* Amarillo Coppel */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+input[type="file"]::before {
+    content: 'Adjuntar archivo';
+    display: inline-block;
+    background: #ffd100;
+    color: white;
+    border: 1px solid #ffd100;
+    padding: 5px 15px;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[type="file"]:hover::before {
+    background-color: #e5b800;
+    border-color: #e5b800;
+}
+
+/* Estilo básico para el botón de "Volver" */
+.btn-volver {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.flecha-img {
+    width: 15px;
+    height: auto;
+    margin-right: 8px;
+}
+
